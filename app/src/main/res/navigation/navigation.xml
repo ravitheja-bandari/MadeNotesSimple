@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.rt.madenotessimple.view.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_notes_layout">
+        <action
+            android:id="@+id/action_homeFragment_to_newNoteFragment"
+            app:destination="@id/newNoteFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_updateNoteFragment"
+            app:destination="@id/updateNoteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newNoteFragment"
+        android:name="com.rt.madenotessimple.view.NewNoteFragment"
+        android:label="fragment_new_note"
+        tools:layout="@layout/fragment_new_note">
+        <action
+            android:id="@+id/action_newNoteFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateNoteFragment"
+        android:name="com.rt.madenotessimple.view.UpdateNoteFragment"
+        android:label="fragment_update_note"
+        tools:layout="@layout/fragment_update_note">
+        <action
+            android:id="@+id/action_updateNoteFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <argument
+            android:name="note"
+            app:argType="com.rt.madenotessimple.model.Note"
+            app:nullable="false" />
+    </fragment>
+</navigation>
